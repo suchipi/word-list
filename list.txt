@@ -1,3 +1,4 @@
+a
 aa
 aah
 aal
@@ -52944,6 +52945,7 @@ hysterics
 hysteroid
 hythe
 hythes
+i
 iamb
 iambi
 iambic
@@ -56558,7 +56560,9 @@ istle
 it
 ita
 itacism
+italian
 italianize
+italians
 italic
 italicise
 italicised
@@ -56859,6 +56863,7 @@ janties
 janty
 jap
 japan
+japanese
 japanesy
 japanned
 japanner
@@ -59273,6 +59278,9 @@ koppies
 kora
 koras
 kore
+korea
+korean
+koreans
 korero
 koreros
 kores
@@ -113819,6 +113827,8 @@ timeshare
 timetable
 timetabled
 timetables
+timezone
+timezones
 timid
 timider
 timidest
