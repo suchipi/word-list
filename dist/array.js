@@ -94424,6 +94424,7 @@ return [
 "russets",
 "russety",
 "russia",
+"russian",
 "russias",
 "rust",
 "rusted",

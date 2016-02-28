@@ -94424,6 +94424,7 @@ return {
 "russets": true,
 "russety": true,
 "russia": true,
+"russian": true,
 "russias": true,
 "rust": true,
 "rusted": true,
