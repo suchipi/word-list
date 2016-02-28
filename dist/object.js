@@ -18434,6 +18434,7 @@ return {
 "chine": true,
 "chined": true,
 "chines": true,
+"chinese": true,
 "chining": true,
 "chink": true,
 "chinkapin": true,

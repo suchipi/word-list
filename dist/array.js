@@ -18434,6 +18434,7 @@ return [
 "chine",
 "chined",
 "chines",
+"chinese",
 "chining",
 "chink",
 "chinkapin",
