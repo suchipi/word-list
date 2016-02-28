@@ -57932,7 +57932,6 @@ return {
 "jymold": true,
 "jynx": true,
 "jynxes": true,
-"ka": true,
 "kaama": true,
 "kaamas": true,
 "kabab": true,
