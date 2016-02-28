@@ -1,0 +1,68 @@
+#!/usr/bin/env node
+var fs = require('fs');
+
+var umdHeader = function(globalname) {
+  return "(function (root, factory) {\n"+
+  "  if (typeof define === 'function' && define.amd) {\n"+
+  "      define([], factory);\n"+
+  "  } else if (typeof exports === 'object') {\n"+
+  "      module.exports = factory();\n"+
+  "  } else {\n"+
+  "      root['" + globalname + "'] = factory();\n"+
+  "  }\n"+
+  "}(this, function () {\n";
+};
+
+var umdFooter = function() {
+  return "}));";
+};
+
+var wordList = function() {
+  var lines = fs.readFileSync('list.txt', 'utf-8').split("\n");
+  var validLines = [];
+  lines.forEach(function(line){
+    if (line.length > 0) validLines.push(line);
+  });
+  return validLines;
+};
+
+var writeLinesToFile = function(lines, filename) {
+  fs.writeFileSync(filename, lines.join("\n"));
+};
+
+var buildArrayModule = function() {
+  var lines = [];
+
+  lines.push(umdHeader("WordListArray"));
+  lines.push("return [");
+  wordList().forEach(function(word, index, list){
+    if (list.length - index == 1) // last word
+      lines.push("\"" + word + "\"");
+    else
+      lines.push("\"" + word + "\",");
+  });
+  lines.push("]");
+  lines.push(umdFooter());
+
+  writeLinesToFile(lines, "dist/array.js");
+};
+
+var buildObjectModule = function() {
+  var lines = [];
+
+  lines.push(umdHeader("WordListObject"));
+  lines.push("return {");
+  wordList().forEach(function(word, index, list){
+    if (list.length - index == 1) // last word
+      lines.push("\"" + word + "\": true");
+    else
+      lines.push("\"" + word + "\": true,");
+  });
+  lines.push("}");
+  lines.push(umdFooter());
+
+  writeLinesToFile(lines, "dist/object.js");
+};
+
+buildArrayModule();
+buildObjectModule();
